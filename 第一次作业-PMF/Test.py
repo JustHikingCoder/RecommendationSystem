@@ -13,6 +13,16 @@ if __name__ == "__main__":
     train, test = train_test_split(ratings, test_size=0.2)  # 将数据集拆分为训练集和测试集
     pmf.train(train, test)  # 训练
 
+    rlt = pmf.predict(3)
+    idx = np.argsort(rlt)
+    idx = idx[::-1]
+    size = rlt.shape[0]
+    print("对用户3推荐的电影为：")
+
+    for i in range(size):
+        print("电影：{}，推荐值为：{:.2f}".format(idx[i], rlt[idx[i]]))
+
+
     # 画出在训练集和测试集上的误差变化
     plt.plot(range(pmf.max_epoch), pmf.rmse_train, marker='.', label='Training Data')
     plt.plot(range(pmf.max_epoch), pmf.rmse_test, marker='o', label='Test Data')
