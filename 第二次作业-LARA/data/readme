@@ -1,0 +1,8 @@
+The number of items is 2536, 507 for test data set and 2029 for train data set.
+The number of users is 6040. The number of item attributes is 18.
+
+train_data contains 325586 rows
+test_data contains 82885 rows
+neg_data contains 253236 rows 
+
+
